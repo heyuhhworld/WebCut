@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "金融数据采集插件",
+  "version": "1.0.0",
+  "description": "采集网页金融资讯数据并发送到本地后端 API",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  
+  "host_permissions": [
+    "http://localhost:8000/*"
+  ],
+  
+  "action": {
+    "default_popup": "popup.html"
+  },
+  
+  "background": {
+    "service_worker": "background.js"
+  }
+}
+
