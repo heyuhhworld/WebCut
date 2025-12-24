@@ -1,4 +1,4 @@
-# 金融数据采集 Chrome Extension
+# WebCut - 金融数据采集 Chrome Extension
 
 ## 项目结构
 
@@ -11,6 +11,7 @@ webCut/
 ├── background.js         # 后台服务 Worker
 ├── server.py             # 后端 API 服务
 ├── requirements.txt     # Python 依赖
+├── viewer.py            # 数据查看工具
 └── collected_data/       # 采集的数据存储目录（自动创建）
 ```
 
@@ -71,6 +72,22 @@ uvicorn server:app --host 0.0.0.0 --port 8000 --reload
 3. **查看数据**：
    - 采集的数据保存在 `collected_data/` 目录
    - 文件名格式：`YYYYMMDD_HHMMSS_domain_userid.json`
+   - 使用查看工具：`python3 viewer.py`
+
+## 数据查看工具
+
+使用内置的查看工具浏览采集的数据：
+
+```bash
+python3 viewer.py
+```
+
+功能包括：
+- 列出所有采集的文件
+- 显示数据摘要（元数据、资源统计）
+- 查看所有资源详情
+- 预览 HTML 快照
+- 保存 HTML 到独立文件
 
 ## API 数据格式
 
@@ -93,4 +110,3 @@ uvicorn server:app --host 0.0.0.0 --port 8000 --reload
   ]
 }
 ```
-
